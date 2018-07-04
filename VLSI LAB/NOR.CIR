@@ -1,0 +1,19 @@
+CMOS OR:
+V1 1 0 DC 5V
+V2 2 0 PULSE(0 5 0ns 3ns 3ns 30ns 80ns)
+V3 4 0 PULSE(0 5 15ns 3ns 3ns 30ns 80ns)
+CL 6 0 0.15PF
+MPU1 5 2 1 1 IRF150
+MPU2 3 4 5 5 IRF150
+MPU3 6 3 1 1 IRF150
+MPD1 3 2 0 0 IRF250
+MPD2 3 4 0 0 IRF250
+MPD3 6 3 0 0 IRF250
+.MODEL IRF250 NMOS (level=3 w=4u l=2u vto=1.0 tox=470e-10 nsub=38e14 
++cj=160e-6 cjsw=430e-12 mj=0.33 kp=30e-6)
+.MODEL IRF150 PMOS (level=3 w=10u l=2u vto=1.0 tox=470e-10 nsub=8.7e14 
++cj=100e-6 cjsw=180e-12 mj=0.5 kp=12e-6)
+.DC V2 0 5 0.1 
+.TRAN 1ns 180ns
+.PROBE V(2,0) V(4,0) V(CL)
+.END															   R 

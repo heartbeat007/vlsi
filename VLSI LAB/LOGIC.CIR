@@ -1,0 +1,23 @@
+logic implement:
+V1 1 0 DC 5V
+VA 5 0 PULSE(0 5 0ns 3ns 3ns 20ns 40ns)
+VB 2 0 PULSE(0 5 6ns 3ns 3ns 20ns 60ns)
+VC 3 0 PULSE(0 5 25ns 3ns 3ns 20ns 80ns)
+MPU1 4 2 1 1 IRF150
+MPU2 7 3 4 4 IRF150
+MPU3 7 5 1 1 IRF150
+MPU4 8 7 1 1 IRF150
+MPD1 7 5 6 6 IRF250
+MPD2 6 2 0 0 IRF250
+MPD3 6 3 0 0 IRF250
+MPD4 8 7 0 0 IRF250
+CL 8 0 0.15PF
+.MODEL IRF250 NMOS (level=3 w=10u l=2u vto=1.0 tox=470e-10 nsub=38e14 cj=160e-6 cjsw=430e-12 mj=0.33 kp=30e-6)
+.MODEL IRF150 PMOS (level=3 w=20u l=2u vto=1.0 tox=470e-10 nsub=8.7e14 cj=100e-6 cjsw=180e-12 mj=0.5 kp=12e-6)
+.DC VA 0 5 0.1
+.TRAN 1ns 180ns
+.PROBE V(VA) V(VB) V(VC) V(CL) 
+.END
+
+
+

@@ -1,0 +1,116 @@
+
+**** 06/20/18 11:07:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ CMOS OR:
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+V1 1 0 DC 5V
+V2 2 0 PULSE(0 5 0ns 3ns 3ns 30ns 80ns)
+V3 4 0 PULSE(0 5 15ns 3ns 3ns 30ns 80ns)
+CL 6 0 0.15PF
+MPU1 5 2 1 1 IRF150
+MPU2 3 4 5 5 IRF150
+MPU3 6 3 1 1 IRF150
+MPD1 3 2 0 0 IRF250
+MPD2 3 4 0 0 IRF250
+MPD3 6 3 0 0 IRF250
+.MODEL IRF250 NMOS (level=3 w=4u l=2u vto=1.0 tox=470e-10 nsub=38e14 
++cj=160e-6 cjsw=430e-12 mj=0.33 kp=30e-6)
+.MODEL IRF150 PMOS (level=3 w=10u l=2u vto=1.0 tox=470e-10 nsub=8.7e14 
++cj=100e-6 cjsw=180e-12 mj=0.5 kp=12e-6)
+.DC V2 0 5 0.1 
+.TRAN 1ns 180ns
+.PROBE V(2,0) V(4,0) V(CL)
+.END
+
+**** 06/20/18 11:07:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ CMOS OR:
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF250          IRF150          
+               NMOS            PMOS            
+       LEVEL    3               3            
+           L    2.000000E-06    2.000000E-06 
+           W    4.000000E-06   10.000000E-06 
+         VTO    1               1            
+          KP   30.000000E-06   12.000000E-06 
+       GAMMA     .48341          .231304     
+         PHI     .645382         .569121     
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ  160.000000E-06  100.000000E-06 
+        CJSW  430.000000E-12  180.000000E-12 
+          MJ     .33                         
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+        NSUB    3.800000E+15  870.000000E+12 
+         TOX   47.000000E-09   47.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    0               0            
+       XPART    0               0            
+
+
+**** 06/20/18 11:07:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ CMOS OR:
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    5.0000  (    2)    0.0000  (    3)    5.0000  (    4)    0.0000      
+
+(    5)    5.0000  (    6)     .2567  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1          -5.934E-05
+    V2           0.000E+00
+    V3           0.000E+00
+
+    TOTAL POWER DISSIPATION   2.97E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

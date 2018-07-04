@@ -1,0 +1,14 @@
+CMOS INVERTER:
+V1 1 0 DC 5V
+V2 2 0 PULSE(0 5 3ns 3ns 3ns 20ns 40ns)
+V3 3 0 PULSE(0 5 3ns 3ns 3ns 20ns 40ns)
+CL 3 0 0.15PF
+MPU 3 2 1 1 IRF150
+MPD 3 2 0 0 IRF250
+.MODEL IRF250 NMOS (level=3 w=10u l=2u vto=1.0 tox=470e-10 nsub=38e14 cj=160e-6 cjsw=430e-12 mj=0.33 kp=30e-6)
+.MODEL IRF150 PMOS (level=3 w=10u l=2u vto=1.0 tox=470e-10 nsub=8.7e14 cj=100e-6 cjsw=180e-12 mj=0.5 kp=12e-6)
+.DC V2 0 5 0.1
+.TRAN 1ns 180ns
+.PROBE V(V2) V(CL)
+.END
+
