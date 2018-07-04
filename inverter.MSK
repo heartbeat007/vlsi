@@ -1,0 +1,30 @@
+VERSION 7/3/2018 9:15:46 PM
+FIG #C:\Users\Student\Desktop\tanvir\inverter.MSK
+BB(2,-1,62,40)
+SIMU #5.00
+REC(2,18,60,22,NW)
+REC(38,25,17,7,DP)
+REC(9,25,17,7,DP)
+REC(26,25,12,7,DP)
+REC(10,-1,16,10,DN)
+REC(26,-1,12,10,DN)
+REC(38,-1,19,10,DN)
+REC(13,3,2,2,CO)
+REC(10,28,2,2,CO)
+REC(50,27,2,2,CO)
+REC(50,3,2,2,CO)
+REC(26,-1,12,33,PO)
+REC(9,24,8,8,ME)
+REC(10,-1,7,10,ME)
+REC(48,0,8,32,ME)
+TITLE 11 29  #Vdd
+$1 1000 0 
+TITLE 12 4  #Vss
+$0 1000 0 
+TITLE 33 16  #clock1
+$c 1000 0 0.0900 0.1000 0.1900 0.2000 
+TITLE 53 17  #s1
+$v 1000 0 
+TITLE 58 35  #Vss
+$0 1000 0 
+FFIG C:\Users\Student\Desktop\tanvir\inverter.MSK
