@@ -1,0 +1,2 @@
+pmos er upore source
+nmos er upore drain
