@@ -1,0 +1,30 @@
+VERSION 7/24/2018 10:49:07 AM
+FIG #C:\Users\ComputerLab-15\Desktop\tavnir lab\inverter.MSK
+BB(14,-11,79,41)
+SIMU #2.00
+REC(14,13,65,22,NW)
+REC(44,20,22,8,DP)
+REC(27,20,9,8,DP)
+REC(44,-7,24,8,DN)
+REC(29,-7,7,8,DN)
+REC(61,23,2,2,CO)
+REC(31,-4,2,2,CO)
+REC(62,-4,2,2,CO)
+REC(29,24,2,2,CO)
+REC(36,-11,8,52,PO)
+REC(27,-9,8,12,ME)
+REC(59,-9,6,46,ME)
+REC(25,18,9,14,ME)
+REC(36,20,8,8,DP)
+REC(36,-7,8,8,DN)
+TITLE 30 27  #Vdd
+$1 1000 0 
+TITLE 31 -3  #Vss
+$0 1000 0 
+TITLE 62 8  #s1
+$v 1000 0 
+TITLE 39 10  #clock1
+$c 1000 0 0.0900 0.1000 0.1900 0.2000 
+TITLE 75 18  #Vdd
+$1 1000 0 
+FFIG C:\Users\ComputerLab-15\Desktop\tavnir lab\inverter.MSK
